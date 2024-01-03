@@ -1,1 +1,3 @@
 package statistics
+
+func Average()
