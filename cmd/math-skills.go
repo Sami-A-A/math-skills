@@ -4,7 +4,8 @@ import (
 	"fmt"
 	"math-skills/pkg/statistics"
 	"math-skills/pkg/errhandler"
-	"io/os"
+	"bufio"
+	"strconv"
 	"os"
 )
 
@@ -16,15 +17,38 @@ func main() {
 	}
 	
 	//Set variables
-	input := os.Args[1]
+	var numSet []int
 
-	//Read file and assign the set into a []int variable
-	fileContents, err := os.ReadFile("" + input)
+	input := os.Args[1]
+	filePath := "../cmd/" + input 
+
+	//Read file
+	file, err := os.Open(filePath)
 	if err != nil {
+		fmt.Println("Error opening file:", err)
+		return
+	}
+	defer file.Close()
+
+	fileScanner := bufio.NewScanner(file)
+
+	for fileScanner.Scan() {
+		line := fileScanner.Text()
+		number,err := strconv.Atoi(line)
+		if err != nil {
+			fmt.Println("Error converting line to integer:", err)
+			return
+		}
+
+		numSet = append(numSet, number)
+	}
+
+	if err := fileScanner.Err(); err != nil {
+		fmt.Println("Error reading file:", err)
 		return
 	}
 
-	//Parse fileContents into []int
+	//Parse file into []int
 
 
 	//Error Handling
