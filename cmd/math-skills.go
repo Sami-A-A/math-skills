@@ -12,10 +12,10 @@ import (
 func main() {
 
 	//Error handling wrong cmd inputs
-	if !errhandler.CheckArgs(os.Args){
+	if errhandler.CheckArgs(os.Args){
 		return
 	}
-	
+
 	//Set variables
 	var numSet []int
 
@@ -30,8 +30,10 @@ func main() {
 	}
 	defer file.Close()
 
+	//Creating a file scanner
 	fileScanner := bufio.NewScanner(file)
 
+	//Use Scanner to create a number set to save to numSet
 	for fileScanner.Scan() {
 		line := fileScanner.Text()
 		number,err := strconv.Atoi(line)
@@ -48,15 +50,9 @@ func main() {
 		return
 	}
 
-	//Parse file into []int
-
-
-	//Error Handling
-
-
 	//Final Output: Run all statistics functions on the given data set and print results on terminal
-	fmt.Printf("Average: %d \n", statistics.Average())
-	fmt.Printf("Median: %d \n", statistics.Median())
-	fmt.Printf("Variance: %d \n", statistics.Variance())
-	fmt.Printf("Standard Deviation: %d \n", statistics.StdDeviation())
+	fmt.Printf("Average: %d \n", statistics.Average(numSet))
+	fmt.Printf("Median: %d \n", statistics.Median(numSet))
+	fmt.Printf("Variance: %d \n", statistics.Variance(numSet))
+	fmt.Printf("Standard Deviation: %d \n", statistics.StdDeviation(numSet))
 }
