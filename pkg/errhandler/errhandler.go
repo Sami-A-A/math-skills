@@ -13,7 +13,3 @@ func CheckArgs(args []string) bool{
 	}
 	return true
 }
-
-func CheckDataSet(data []string) bool{
-	return true
-}
