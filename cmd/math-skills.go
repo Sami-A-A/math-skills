@@ -58,5 +58,5 @@ func main() {
 	fmt.Printf("Standard Deviation: %d\n", int(math.Round(statistics.StdDeviation(numSet))))
 
 		// Note: Alright so what's happening here is the float64 is being rounded into another float64 
-		// 	then parsed into an int so it prints only the whole number
+		// then parsed into an int so it prints only the whole number
 }
