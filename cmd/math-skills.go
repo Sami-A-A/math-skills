@@ -5,6 +5,7 @@ import (
 	"math-skills/pkg/statistics"
 	"math-skills/pkg/errhandler"
 	"bufio"
+	"math"
 	"strconv"
 	"os"
 )
@@ -17,7 +18,7 @@ func main() {
 	}
 
 	//Set variables
-	var numSet []int
+	var numSet []float64
 
 	input := os.Args[1]
 	filePath := "../cmd/" + input 
@@ -42,7 +43,7 @@ func main() {
 			return
 		}
 
-		numSet = append(numSet, number)
+		numSet = append(numSet, float64(number))
 	}
 
 	if err := fileScanner.Err(); err != nil {
@@ -51,8 +52,11 @@ func main() {
 	}
 
 	//Final Output: Run all statistics functions on the given data set and print results on terminal
-	fmt.Printf("Average: %d \n", statistics.Average(numSet))
-	fmt.Printf("Median: %d \n", statistics.Median(numSet))
-	fmt.Printf("Variance: %d \n", statistics.Variance(numSet))
-	fmt.Printf("Standard Deviation: %d \n", statistics.StdDeviation(numSet))
+	fmt.Printf("Average: %d\n", int(math.Round(statistics.Average(numSet))))
+	fmt.Printf("Median: %d\n", int(math.Round(statistics.Median(numSet))))
+	fmt.Printf("Variance: %d\n", int(math.Round(statistics.Variance(numSet))))
+	fmt.Printf("Standard Deviation: %d\n", int(math.Round(statistics.StdDeviation(numSet))))
+
+		// Note: Alright so what's happening here is the float64 is being rounded into another float64 
+		// 	then parsed into an int so it prints only the whole number
 }

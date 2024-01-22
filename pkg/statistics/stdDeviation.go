@@ -1,6 +1,6 @@
 package statistics
 
-func StdDeviation(numSet []int) int{
-	var stdDeviation int
+func StdDeviation(numSet []float64) float64{
+	var stdDeviation float64
 	return stdDeviation
 }
