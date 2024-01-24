@@ -1,7 +1,7 @@
 # Math Skills
 
 ## Contents
-* [About](#about-this-project)
+* [About this Project](#about-this-project)
 * [Objective](#objective)
 * [Usage](#usage)
 * [Technologies](#technologies)
@@ -11,9 +11,9 @@
 
 This project was developed for educational purposes under the [Reboot 01 curriculum](https://reboot01.com/curriculum/). 
 
-Math Skills is a program that takes a statistical population and finds its average, median, variance and standard deviation then prints the rounded values onto the console. It's not that deep I know but it was a fun project to work on regardless and was good practice for writing in my language of choice in Golang. 
+Math Skills is a program that takes a statistical population and finds its average, median, variance and standard deviation then prints the rounded values onto the console. It's not that deep, I know, but it was a fun project to work on regardless. I know Python fanboys would tell you all about how much better their Anaconda libraries are for doing math but this made for some excellent Golang practice which is a lighter and far cuter programming language.
 
-Have fun!
+With that out of the way, hope you find what you're looking for and have fun!
 
 ## Objective
 
@@ -31,7 +31,7 @@ The objective of this program is to calculate the following and print the result
     - Every number must be an integer
 3. From the terminal run the following command:
 
-    - ```go run math-skills.go data.txt```
+    ```$go run math-skills.go data.txt```
 
 
 ## Technologies
